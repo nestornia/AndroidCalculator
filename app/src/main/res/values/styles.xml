@@ -1,0 +1,42 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="calc_result">
+        <item name="android:textColor">@color/text_calc</item>
+    </style>
+    
+    <style name="FuncButtons">
+        <item name="android:textSize">40dp</item>
+        <item name="android:minHeight">80dp</item>
+        <item name="android:textColor">@color/text_func</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/func_round_buttons</item>
+    </style>
+
+    <style name="NumButtons">
+        <item name="android:textSize">40dp</item>
+        <item name="android:minHeight">80dp</item>
+        <item name="android:textColor">@color/text_num</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/func_num_buttons</item>
+    </style>
+
+    <style name="EqualButton">
+        <item name="android:textSize">40dp</item>
+        <item name="android:minHeight">80dp</item>
+        <item name="android:textColor">@color/text_equal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/func_equal_buttons</item>
+    </style>
+
+
+</resources>

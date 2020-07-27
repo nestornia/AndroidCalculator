@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- Text calculator -->
+    <color name="text_calc">#c4c4c4</color>
+
+    <!-- Func button colors -->
+    <color name="background_func">#000</color>
+    <color name="text_func">#c4c4c4</color>
+
+    <!-- Num button colors -->
+    <color name="background_num">#c4c4c4</color>
+    <color name="text_num">#000</color>
+
+    <!-- Equal button colors -->
+    <color name="background_equal">#FF5722</color>
+    <color name="text_equal">#c4c4c4</color>
+
+</resources>
