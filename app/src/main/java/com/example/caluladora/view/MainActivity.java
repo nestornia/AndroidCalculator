@@ -1,15 +1,20 @@
-package com.example.caluladora;
+package com.example.caluladora.view;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
-import com.udojava.evalex.Expression;
+import com.example.caluladora.R;
+import com.example.caluladora.viewmodel.HomeViewModel;
 
-import java.math.BigDecimal;
+import java.util.Locale;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -24,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btn00, btndec;
     protected Button btnadd, btnsub, btnperc, btndiv, btnmul, btncl, btnequal;
     protected TextView tvUserInput, tvResult;
+    private HomeViewModel homeViewModel;
+
     //Declaring and initializing my view/variable [DO NOT INITIALIZE IN CLASS SCOPE]
     //public Button btn8 = findViewById(R.id.btn_8);
 
@@ -91,6 +98,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         tvUserInput = findViewById(R.id.tv_input_user);
         tvResult = findViewById(R.id.tv_result);
+
+        homeViewModel = new ViewModelProvider.NewInstanceFactory().create(HomeViewModel.class);
+        homeViewModel.getDisplayValue().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String displayValue) {
+                Log.i("setting this", displayValue);
+                tvResult.setText(displayValue);
+            }
+        });
 
     }
 
@@ -214,17 +230,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tvResult.setText("");
             }break;
             case R.id.btn_equals: {
+                homeViewModel.evaluateOperation(tvUserInput.getText().toString());
             }
-                if (tvUserInput.getText().toString().equals("")){
-                    tvUserInput.setText("");
-                } else {
-                    Expression expression = new Expression(tvUserInput.getText().toString());
-                    expression.setPrecision(2);
-                    BigDecimal result = expression.eval();
-                    tvResult.setText(result.toPlainString());
-                }
-
-            break;
         }
     }
 
