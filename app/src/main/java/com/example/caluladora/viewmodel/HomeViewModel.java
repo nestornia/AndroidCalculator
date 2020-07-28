@@ -18,8 +18,8 @@ public class HomeViewModel extends ViewModel {
         return _displayValue;
     }
 
-    public void  evaluateOperation(String s) {
-        Expression expression = new Expression(s);
+    public void  evaluateOperation(String displayValue) {
+        Expression expression = new Expression(displayValue);
         expression.setPrecision(2);
         BigDecimal res = expression.eval();
         _displayValue.setValue(res.toPlainString());
